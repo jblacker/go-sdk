@@ -12,7 +12,7 @@ test:
 e2e-test:
 	git submodule update --init --recursive && go test -tags testtools -race -cover ./e2e/...
 lint:
-	go install -v github.com/golangci/golangci-lint/cmd/golangci-lint@v1.54.1
-	${GOPATH}/bin/golangci-lint run --build-tags testtools --deadline=3m --timeout=3m ./... # Run linters
+	go install -v github.com/golangci/golangci-lint/cmd/golangci-lint@v1.64.8
+	${GOPATH}/bin/golangci-lint run --build-tags testtools --timeout=3m ./... # Run linters
 docs:
 	go run golang.org/x/pkgsite/cmd/pkgsite@latest -open .
